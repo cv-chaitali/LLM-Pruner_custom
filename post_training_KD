@@ -29,14 +29,14 @@ import matplotlib.pyplot as plt
 
 from huggingface_hub import login
 
-login("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")
+login("tpken")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 from torch.nn import functional as F
 
 # Load Teacher Model
 teacher_tokenizer = transformers.AutoTokenizer.from_pretrained(
-    "lmsys/vicuna-7b-v1.5", use_auth_token="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"
+    "lmsys/vicuna-7b-v1.5", use_auth_token="token"
 )
 teacher_model = transformers.AutoModelForCausalLM.from_pretrained("lmsys/vicuna-7b-v1.5")
 teacher_model.eval()  # Set teacher to evaluation mode
